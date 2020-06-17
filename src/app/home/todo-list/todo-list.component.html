@@ -1,0 +1,23 @@
+<ul class="list-group" style="margin-top:16px;margin-left: 50px;margin-right: 50px;">
+  <li *ngFor="let todo of todos; let i=index" class="list-group-item">
+
+    <div>
+      <input #checkbox (click)="onDoneClicked(checkbox, i)" [checked]="todo.done" type="checkbox">&nbsp;&nbsp;<span
+        (click)="onDelete(i)">{{ todo.text }}</span>
+    </div>
+
+  </li>
+</ul>
+
+<div id="wrapper" class="footer" style="margin-bottom: 120px">
+  <div id="yourdiv">
+
+    <a *ngFor="let page of pages;let i=index" style="color: blue;cursor: pointer;margin: 6px;">
+      <span (click)="fetchPagewise(i)">
+        <u>{{ page }}</u>
+      </span>
+    </a>
+
+  </div>
+  <hr>
+</div>
